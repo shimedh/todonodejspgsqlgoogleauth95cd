@@ -20,6 +20,7 @@ const createDB = `CREATE TABLE todoitems(
 const initializeDatabase = (callback) => {
 
   pool.query(selectExists, (error, result) => {
+    console.log(`Error: ${error}   ..... Result: ${result}`);
     if (error) {
       console.log(`Failed to query todoitems table: ${error}`);
       callback();
